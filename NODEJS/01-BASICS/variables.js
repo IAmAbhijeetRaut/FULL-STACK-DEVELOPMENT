@@ -1,8 +1,8 @@
 let name = 'John'; // this is a string and you can use single/double quotes or Backticks `` (ES6)
 let score = 103; // this is a number
-let bonus = 120;
-let score_2 = '100'
-let bonus_2 = '20';
+let bonus = 120; // this is a number
+let score_2 = '100' // this is still a string 
+let bonus_2 = '20'; // this is still a string
 
 console.log(score) // it is not mandatory to provide a semicolon at the end // OUTPUT: 103
 
