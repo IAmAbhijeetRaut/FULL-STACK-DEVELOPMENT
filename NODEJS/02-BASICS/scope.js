@@ -35,3 +35,25 @@ console.log("Outside if block : iAmGlobal : ",iAmGlobal);
    not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.
 2. The let variables have the same execution phase as the var variables.
  */
+
+
+// Territory of let varaibles -->
+
+let King = 'John';
+if (true) {
+    //let King = 'Sam'; //
+
+    if (true) {
+        //let King = 'Ram'
+        // King = 'Ram' // never declare the variables in this way as this will leak into global scope
+        console.log("Whos is the King ? --> ",King); // this is gonna look into its scope first
+        // if any value found in its own scope then it will print it
+        // so in this case if we comment King = Ram then it will consider Sam as the king
+        // if Sam part is also commented then 
+    }
+}
+
+if (true) {
+    console.log("I am second part : ",King);
+    // the King = 'Ram' i.e. without var or let declaration will be leaking here i.e. it will be accessible here
+}
