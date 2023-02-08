@@ -1,6 +1,6 @@
-var temp = 0;
-var nullAssignedvariable = null;
-var undefinedVariable;
+var temp = 0; // zero assigned variable
+var nullAssignedvariable = null; // null assigned variable
+var undefinedVariable; // undefined variable
 //var temp; //leads to Current temperature is: undefined
 //Remember null and undefined are completely different from zero '0'
 
