@@ -31,9 +31,67 @@ console.log(superHeroes[superHeroes.length]); // undefined
 //Adding element to an array
 superHeroes.push("Batman"); // add at last position
 superHeroes[7] = "Doctor Strange"; // add at specific position
+superHeroes.unshift('Black Adam'); // add at first position
+console.log("After all add operations ",superHeroes);
+
+//Removing element from the array
+let lastElement = superHeroes.pop(); // Remove last element and return the element
+let firstElement = superHeroes.shift() // Remove element from first position 
+superHeroes.splice(2,1); // 2 -> indicates we want to start deleting from 3rd element and 1 -> is the total elements to be deleted from that index
+// In above method first argument is exclusive means deletion will start from 3rd element
+console.log("After all remove operations ",superHeroes)
+
 
 //Array elements are object properties in the same way that toString is a property
 console.log(Object.keys(superHeroes));
 
+//Iterating Arrays
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //3 different ways to iterate over an array
 //Way-1 : Using traditional for loop
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+//Way-2 : Advanced For Loop or For-of Loop
+for (const value of arr) {
+  console.log(value);
+}
+//Way-3 : Array.forEach()
+arr.forEach(function(element) {
+  console.log(element);
+});
+
+
+//Sparse Arrays
+const a = Array(5); // [ <5 empty items> ]
+
+// Consecutive commas in array literal:
+const b = [1, 2, , , 5]; // [ 1, 2, <2 empty items>, 5 ]
+
+// Directly setting a slot with index greater than array.length:
+const c = [1, 2];
+c[4] = 5; // [ 1, 2, <2 empty items>, 5 ]
+
+// Elongating an array by directly setting .length:
+const d = [1, 2];
+d.length = 5; // [ 1, 2, <3 empty items> ]
+
+// Deleting an element:
+const e = [1, 2, 3, 4, 5];
+delete e[2]; // [ 1, 2, <1 empty item>, 4, 5 ]
+
+// In some operations, empty slots behave as if they are filled with undefined.
+const arr_3 = [1, 2, , , 5]; // Create a sparse array
+
+// Indexed access
+console.log(arr_3[2]); // undefined
+
+// For...of
+for (const i of arr_3) {
+  console.log(i);
+}
+// Logs: 1 2 undefined undefined 5
+
+// Spreading
+const another = [...arr_3]; // "another" is [ 1, 2, undefined, undefined, 5 ]
+
