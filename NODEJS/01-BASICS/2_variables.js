@@ -19,7 +19,7 @@ console.log(fullName); // OP : John * Doe
 console.log(firstName +" "+ lastName); // we use " " with +  operator to add a space // OP : John Doe
 
 //Changing the variable
-//let firstName --> Redeclaring is not allowed in 'let' declared variables
+//let firstName = "AnotherName"; //  Redeclaring is not allowed in 'let' declared variables
 firstName = "AnotherName"; // correct way of re-initializing it 
 console.log("firstName : ",firstName);
 
