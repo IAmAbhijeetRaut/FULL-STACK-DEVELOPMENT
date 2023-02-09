@@ -1,0 +1,148 @@
+------------------------------------------------  ARRAY DESCRIPTION  --------------------------------------------------------------------------------------------------------
+
+In JavaScript, arrays are not primitives, but are instead Array objects with the following core characteristics:
+
+JavaScript arrays are resizable and can contain a mix of different data types. (However, if these characteristics are undesirable, 
+use typed arrays instead.)
+
+JavaScript arrays are not associative arrays, and therefore, array elements cannot be accessed using arbitrary strings as indexes. 
+Instead, they must be accessed using nonnegative integers (or their respective string form) as indexes.
+
+JavaScript arrays are zero-indexed: the first element of an array is at index 0, the second is at index 1, and so on. The last element 
+is at the value of the array's length property minus 1.
+
+JavaScript array-copy operations create shallow copies. (All standard built-in copy operations with any JavaScript objects create 
+shallow copies, rather than deep copies).
+
+------------------------------------------------  ARRAY DESCRIPTION  --------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------- Relationship between length and numerical properties -----------------------------------------------------------------------------------------
+
+A JavaScript array's length property and numerical properties have a connection. Built-in array methods like join(), slice(), 
+indexOf(), etc. 
+
+consider the value of the array's length property when they are executed.
+
+Methods like push(), splice(), etc. also result in updates to the length property of an array.
+
+When setting a property on a JavaScript array when the property is a valid array index and that index is outside the current 
+bounds of the array, the engine will update the array's length property accordingly:
+
+------------------------------------------- Relationship between length and numerical properties -----------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------- Array methods and empty slots -------------------------------------------------------------------------------------------------------
+
+Empty slots in sparse arrays behave inconsistently between array methods. Generally, the older methods will skip empty slots, 
+while newer ones treat them as undefined.
+
+Among methods that iterate through multiple elements, the following do an in check before accessing the index and do not conflate empty
+slots with undefined:
+
+concat(), copyWithin(), every(), filter(), flat(), flatMap(), forEach(), indexOf(), lastIndexOf(), map(), reduce(), reduceRight(), 
+reverse(), slice(), some(), sort(), splice()
+
+For exactly how they treat empty slots, see the page for each method.
+
+These methods treat empty slots as if they are undefined:
+
+entries(), fill(), find(), findIndex(), findLast(), findLastIndex(), group() Experimental, groupToMap() Experimental, includes(), 
+join(), keys(), toLocaleString(), values()
+
+---------------------------------------------------- Array methods and empty slots --------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------   Copying methods and mutating methods  --------------------------------------------------------------------------------------------------
+
+Some methods do not mutate the existing array that the method was called on, but instead return a new array. They do so by first accessing
+this.constructor[Symbol.species] to determine the constructor to use for the new array. The newly constructed array is then populated with
+elements. The copy always happens shallowly — the method never copies anything beyond the initially created array. Elements of the original 
+array(s) are copied into the new array as follows:
+
+Objects: the object reference is copied into the new array. Both the original and new array refer to the same object.
+That is, if a referenced object is modified, the changes are visible to both the new and original arrays.
+Primitive types such as strings, numbers and booleans (not String, Number, and Boolean objects): their values are copied into 
+the new array.
+
+Other methods mutate the array that the method was called on, in which case their return value differs depending on the method: 
+sometimes a reference to the same array, sometimes the length of the new array.
+The following methods create new arrays with @@species:
+
+concat(), filter(), flat(), flatMap(), map(), slice(), splice() (to construct the array of removed elements that's returned)
+Note that group() and groupToMap() do not use @@species to create new arrays for each group entry, but always use the plain Array constructor. 
+Conceptually, they are not copying methods either.
+
+The following methods mutate the original array:
+copyWithin(), fill(), pop(), push(), reverse(), shift(), sort(), splice(), unshift()
+
+
+
+----------------------------------------------------- Copying methods and mutating methods --------------------------------------------------
+
+Some methods do not mutate the existing array that the method was called on, but instead return a new array. They do so by first 
+accessing this.constructor[Symbol.species] to determine the constructor to use for the new array. The newly constructed array is
+then populated with elements. The copy always happens shallowly — the method never copies anything beyond the initially created array.
+Elements of the original array(s) are copied into the new array as follows:
+
+Objects: the object reference is copied into the new array. Both the original and new array refer to the same object. That is, if a referenced object is modified, the changes are visible to both the new and original arrays.
+Primitive types such as strings, numbers and booleans (not String, Number, and Boolean objects): their values are copied into the new array.
+Other methods mutate the array that the method was called on, in which case their return value differs depending on the method: sometimes a reference to the same array, sometimes the length of the new array.
+
+The following methods create new arrays with @@species:
+
+concat(), filter(), flat(), flatMap(), map(), slice(), splice() (to construct the array of removed elements that's returned)
+Note that group() and groupToMap() do not use @@species to create new arrays for each group entry, but always use the plain Array 
+constructor. Conceptually, they are not copying methods either.
+
+The following methods mutate the original array:
+
+copyWithin(), pop(), push(), reverse(), fill(), shift(), sort(), splice(), unshift()
+
+----------------------------------------------------- Copying methods and mutating methods --------------------------------------------------
+
+
+
+-------------------------------------------------------   Iterative methods -------------------------------------------------------------------
+
+Iterative methods : 
+Many array methods take a callback function as an argument. The callback function is called sequentially and at most once for each 
+element in the array, and the return value of the callback function is used to determine the return value of the method. 
+They all share the same signature:
+
+signature : method(callbackFn, thisArg)
+
+Where callbackFn takes three arguments:
+
+element
+The current element being processed in the array.
+
+index
+The index of the current element being processed in the array.
+
+array
+The array that the method was called upon.
+
+What callbackFn is expected to return depends on the array method that was called.
+
+The thisArg argument (defaults to undefined) will be used as the this value when calling callbackFn. The this value ultimately observable by callbackFn is determined according to the usual rules: if callbackFn is non-strict, primitive this values are wrapped into objects, and undefined/null is substituted with globalThis. The thisArg argument is irrelevant for any callbackFn defined with an arrow function, as arrow functions don't have their own this binding.
+
+All iterative methods are copying and generic, although they behave differently with empty slots.
+
+The following methods are iterative:
+
+every(), filter(), find(), findIndex(), findLast(), findLastIndex(), flatMap(), forEach(), group(), groupToMap(), map(), some()
+In particular, every(), find(), findIndex(), findLast(), findLastIndex(), and some() do not always invoke callbackFn on every element
+ — they stop iteration as soon as the return value is determined.
+
+There are two other methods that take a callback function and run it at most once for each element in the array, but they have slightly
+different signatures from typical iterative methods (for example, they don't accept thisArg):
+reduce()
+reduceRight()
+The sort() method also takes a callback function, but it is not an iterative method. It mutates the array in-place, doesn't accept 
+thisArg, and may invoke the callback multiple times on an index.
+
+-------------------------------------------------------   Iterative methods -------------------------------------------------------------------
