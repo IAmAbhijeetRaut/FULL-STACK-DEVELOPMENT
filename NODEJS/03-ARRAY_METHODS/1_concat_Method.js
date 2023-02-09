@@ -6,6 +6,7 @@
       Symbol.isConcatSpreadable is set to a truthy value (e.g. true).
    */
 
+
 // Concatenating two arrays
 const letters_1 = ["a", "b", "c"];
 const numbers_1 = [1, 2, 3];
@@ -43,8 +44,4 @@ const obj1 = { 0: 1, 1: 2, 2: 3, length: 3 };
 const obj2 = { 0: 1, 1: 2, 2: 3, length: 3, [Symbol.isConcatSpreadable]: true };
 console.log([0].concat(obj1, obj2));
 // [ 0, { '0': 1, '1': 2, '2': 3, length: 3 }, 1, 2, 3 ]
-
-
-
-
 

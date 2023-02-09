@@ -8,6 +8,7 @@ console.log("Current temperature is: "+temp); // OP : Zero
 console.log("nullAssignedvariable : ",nullAssignedvariable); // OP : null
 console.log("undefinedVariable : ",undefinedVariable); // OP : undefined
 
+
 //Grade system 
 // if 10 marks --> print --> "Great Job"
 // if 5 marks --> print --> "Work Little Hard"
@@ -19,6 +20,7 @@ let grade = true;
 let actualMarks = 7;
 let myGrade = (actualMarks == 10);
 console.log("Grade : ",myGrade);
+
 
 // What is 'null' ? 
 /* MDN Web Docs --> The value null is written with a literal: null. null is not an identifier for a 
