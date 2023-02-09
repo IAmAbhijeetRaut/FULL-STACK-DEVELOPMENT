@@ -21,9 +21,7 @@ shallow copies, rather than deep copies).
 ------------------------------------------- Relationship between length and numerical properties -----------------------------------------------------------------------------------------
 
 A JavaScript array's length property and numerical properties have a connection. Built-in array methods like join(), slice(), 
-indexOf(), etc. 
-
-consider the value of the array's length property when they are executed.
+indexOf(), etc. consider the value of the array's length property when they are executed.
 
 Methods like push(), splice(), etc. also result in updates to the length property of an array.
 
