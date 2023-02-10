@@ -45,3 +45,10 @@ const obj2 = { 0: 1, 1: 2, 2: 3, length: 3, [Symbol.isConcatSpreadable]: true };
 console.log([0].concat(obj1, obj2));
 // [ 0, { '0': 1, '1': 2, '2': 3, length: 3 }, 1, 2, 3 ]
 
+
+
+//Syntax
+// concat()
+// concat(value0)
+// concat(value0, value1)
+// concat(value0, value1, /* … ,*/ valueN)

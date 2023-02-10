@@ -34,8 +34,8 @@ const firstName_2 = "Keanu";
 const person = { age: 20 };
 person.age = 30; // OK
 console.log("Person Age : ",person.age); // 30
-// so its just that you can chnage the value of a const variable without reassigning it
-// In nomral scenarios it wouldn't be possible 
+// so its just that you can change the value of a const variable without reassigning it
+// In normal scenarios it wouldn't be possible 
 let letVariable = 340;
 const inspiredFromLet = letVariable;
 console.log("letVariable : ", letVariable);
