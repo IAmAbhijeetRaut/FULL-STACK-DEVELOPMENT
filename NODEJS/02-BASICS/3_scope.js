@@ -19,22 +19,6 @@ if (true) {
 console.log("Outisde if block : iAmLocal_2 : ",iAmLocal_2);// var variable outlives the scope
 console.log("Outside if block : iAmGlobal : ",iAmGlobal);
 
-/* var --> 
-1. The var variables belong to the global scope when you define them outside a function.
-   when we say outside the function then it means whether we define them outside all the blocks
-   or inside a if block{} or for loop then also it remains in a global scope.
-2. The var keyword allows you to redeclare a variable without any issue.
-3. In the creation phase, the JavaScript engine assigns storage spaces to var variables 
-   and immediately initializes them to undefined.
-4. In the execution phase, the JavaScript engine assigns the var variables the values specified by 
-   the assignments if there are ones. Otherwise, the var variables remain undefined.
-*/ 
-
-/* let --> 
-1. In the creation phase, the JavaScript engine assigns storage spaces to the let variables but does 
-   not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.
-2. The let variables have the same execution phase as the var variables.
- */
 
 
 // Territory of let varaibles -->
@@ -57,3 +41,21 @@ if (true) {
     console.log("I am second part : ",King);
     // the King = 'Ram' i.e. without var or let declaration will be leaking here i.e. it will be accessible here
 }
+
+
+/* var --> 
+1. The var variables belong to the global scope when you define them outside a function.
+   when we say outside the function then it means whether we define them outside all the blocks
+   or inside a if block{} or for loop then also it remains in a global scope.
+2. The var keyword allows you to redeclare a variable without any issue.
+3. In the creation phase, the JavaScript engine assigns storage spaces to var variables 
+   and immediately initializes them to undefined.
+4. In the execution phase, the JavaScript engine assigns the var variables the values specified by 
+   the assignments if there are ones. Otherwise, the var variables remain undefined.
+*/ 
+
+/* let --> 
+1. In the creation phase, the JavaScript engine assigns storage spaces to the let variables but does 
+   not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.
+2. The let variables have the same execution phase as the var variables.
+ */
