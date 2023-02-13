@@ -80,6 +80,7 @@ var lineup = [
 
 
  //Calling map() on non-array objects
+ //The map() method reads the length property of this and then accesses each integer index.
  const arrayLikeObjects = {
    length:5,
    0: 4,
@@ -89,6 +90,8 @@ var lineup = [
    4: 8,
  }
 
+ console.log(Array.prototype.map.call(arrayLikeObjects, (x) => x ** 2));
+// [ 4, 9, 16 ]
 
 
 //IMP
