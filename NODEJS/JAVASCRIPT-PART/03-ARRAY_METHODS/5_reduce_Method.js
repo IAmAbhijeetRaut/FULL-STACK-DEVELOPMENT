@@ -1,6 +1,14 @@
 //IMP
 /* 
-    1.  
+    1. The reduce() method executes a user-supplied "reducer" callback function on each element of 
+       the array, in order, passing in the return value from the calculation on the preceding element.
+       The final result of running the reducer across all elements of the array is a single value.
+    2. The first time that the callback is run there is no "return value of the previous calculation".
+       If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is
+       used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+       i.e. current Value = array[0], if initial value is specified otherwise it will be array[1].
+    3. The previous value is also called as accumulator and it is the The value resulting from the previous
+       call to callbackFn. On first call, initialValue if specified, otherwise the value of array[0].
 */
 
 //Suppose we have an array [1,2,3,4,5] and we want the addition of all the elements as a result then
@@ -118,3 +126,29 @@ const people = [
 // reduce(function (accumulator, currentValue) { /* … */ }, initialValue)
 // reduce(function (accumulator, currentValue, currentIndex) { /* … */ }, initialValue)
 // reduce(function (accumulator, currentValue, currentIndex, array) { /* … */ }, initialValue)
+
+/* 
+Parameters
+callbackFn
+A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce().
+
+The function is called with the following arguments:
+
+accumulator
+The value resulting from the previous call to callbackFn. On first call, initialValue if specified, otherwise the value of array[0].
+
+currentValue
+The value of the current element. On first call, the value of array[0] if an initialValue was specified, otherwise the value of array[1].
+
+currentIndex
+The index position of currentValue in the array. On first call, 0 if initialValue was specified, otherwise 1.
+
+array
+The array reduce() was called upon.
+
+initialValue Optional
+A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
+
+Return value
+The value that results from running the "reducer" callback function to completion over the entire array.
+*/

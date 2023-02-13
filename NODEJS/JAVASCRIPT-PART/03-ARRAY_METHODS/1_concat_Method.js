@@ -1,4 +1,5 @@
 // IMP
+// This is Copying Method
 /* 1. The concat method creates a new array & it does not change the existing arrays, 
       but instead returns a new array. 
    2. The concat() method preserves empty slots if any of the source arrays is sparse.
