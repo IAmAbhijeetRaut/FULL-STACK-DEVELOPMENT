@@ -8,13 +8,7 @@
       if callbackFn returns a truthy value for all elements, every() returns true.
     3.callbackFn is invoked only for array indexes which have assigned values. It is not invoked for
       empty slots in sparse arrays.
-    4.every() does not mutate the array on which it is called, but the function provided as callbackFn can. 
-      Note, however, that the length of the array is saved before the first invocation of callbackFn. 
-      Therefore:
-      a) callbackFn will not visit any elements added beyond the array's initial length when the call to
-         every() began.
-      b) Changes to already-visited indexes do not cause callbackFn to be invoked on them again.
-      c) If an existing, yet-unvisited element of the array is changed by callbackFn, its value passed to the callbackFn will be the value at the time that element gets visited. Deleted elements are not visited.
+    
 */
 
 
