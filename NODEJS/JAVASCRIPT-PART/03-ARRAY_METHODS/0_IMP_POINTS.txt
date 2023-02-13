@@ -123,3 +123,30 @@ The sort() method also takes a callback function, but it is not an iterative met
 thisArg, and may invoke the callback multiple times on an index.
 
 -------------------------------------------------------   Iterative methods -------------------------------------------------------------------
+
+
+
+
+--------Methods that don't modify the array but the callback 
+        function provided to them can modify the array -------------------------------
+        
+Array.prototype.every()
+Array.prototype.filter()
+Array.prototype.find()
+Array.prototype.findIndex()
+Array.prototype.forEach()
+Array.prototype.map()
+Array.prototype.reduce()
+Array.prototype.reduceRight()
+Array.prototype.some()
+
+These methods have the following characteristics : 
+ 1) These method do not mutate the array on which it is called, but the function provided as callbackFn can. 
+ 2) Note, however, that the length of the array is saved before the first invocation of callbackFn. 
+    Therefore:
+    a) callbackFn will not visit any elements added beyond the array's initial length when the call to 
+       the respective method began.
+    b) Changes to already-visited indexes do not cause callbackFn to be invoked on them again.
+    c) If an existing, yet-unvisited element of the array is changed by callbackFn, its value passed to the callbackFn will be the value at the
+       time that element gets visited. 
+    d) Deleted elements are not visited.
