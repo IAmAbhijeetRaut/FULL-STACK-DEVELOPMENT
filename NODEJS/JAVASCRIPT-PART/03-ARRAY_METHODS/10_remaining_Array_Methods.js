@@ -1,6 +1,6 @@
 // push() - Adds one or more elements to the end of an array and returns the new length of the array.
 let arr = [1, 2, 3];
-arr.push(4);
+arr.push(4,3,6); // can push single/multiple elements
 console.log("log-1 : ",arr); // Output: [1, 2, 3, 4]
 
 // reduceRight() - Applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
@@ -13,17 +13,17 @@ let myArr = [1, 2, 3];
 myArr.unshift(0);
 console.log("log-3 : ",myArr); // Output: [0, 1, 2, 3]
 
-// pop() - Removes the last element from an array and returns that element.
-let arr1 = [1, 2, 3];
-let removedElement = arr1.pop();
-console.log("log-4 : ",arr1); // Output: [1, 2]
-console.log("log-5 : ",removedElement); // Output: 3
-
 // shift() - Removes the first element from an array and returns that element.
 let arr2 = [1, 2, 3];
 let removedElement1 = arr2.shift();
 console.log("log-6 : ",arr2); // Output: [2, 3]
 console.log("log-7 : ",removedElement1); // Output: 1
+
+// pop() - Removes the last element from an array and returns that element.
+let arr1 = [1, 2, 3];
+let removedElement = arr1.pop();
+console.log("log-4 : ",arr1); // Output: [1, 2]
+console.log("log-5 : ",removedElement); // Output: 3
 
 // splice() - Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
 let myArray = ['A', 'B', 'C', 'D', 'E'];
