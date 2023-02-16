@@ -97,8 +97,13 @@ const another = [...arr_3]; // "another" is [ 1, 2, undefined, undefined, 5 ]
 
 
 // Template Literals : 
-//Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings,
+//1 - Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings,
 //string interpolation with embedded expressions, and special constructs called tagged templates. 
+//2 - Template literals do not print undefined variables or the undefined keyword, resulting in an 
+//empty space instead.
+//3 - Template literals are a feature introduced in ECMAScript 6 (ES6), so older browsers may 
+//not support them.
+
 // Syntax
 // `string text`
 
@@ -115,6 +120,8 @@ let variable_1 = "Hello";
 let variable_2 = `${variable_1}`; // Template literal -> `${variable_1}`
 console.log(`variable_1 = ${variable_1}`); // Template literal -> `variable_1 = ${variable_1}`
 console.log(`variable_2 = ${variable_2}`); // Template literal -> `variable_2 = ${variable_2}`
+console.log(`variable_1 = ${variable_1}
+             variable_2 = ${variable_2}`); //new line and spaces will be considered
 
 //Tagged Templates : 
 // Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values.
