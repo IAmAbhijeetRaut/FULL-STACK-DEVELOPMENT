@@ -95,3 +95,48 @@ for (const i of arr_3) {
 // Spreading
 const another = [...arr_3]; // "another" is [ 1, 2, undefined, undefined, 5 ]
 
+
+// Template Literals : 
+//Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings,
+//string interpolation with embedded expressions, and special constructs called tagged templates. 
+// Syntax
+// `string text`
+
+// `string text line 1
+//  string text line 2`
+
+// `string text ${expression} string text`
+
+// tagFunction`string text ${expression} string text`
+
+//if you need to escape a dollar sign or backtick or whatever then just use backslash before it.
+
+let variable_1 = "Hello";
+let variable_2 = `${variable_1}`; // Template literal -> `${variable_1}`
+console.log(`variable_1 = ${variable_1}`); // Template literal -> `variable_1 = ${variable_1}`
+console.log(`variable_2 = ${variable_2}`); // Template literal -> `variable_2 = ${variable_2}`
+
+//Tagged Templates : 
+// Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values.
+// The remaining arguments are related to the expressions.
+
+const person = "Mike";
+const age = 28;
+
+function myTag(strings, personExp, ageExp) {
+  const str0 = strings[0]; // "That "
+  const str1 = strings[1]; // " is a "
+  const str2 = strings[2]; // "."
+
+  const ageStr = ageExp > 99 ? "centenarian" : "youngster";
+
+  // We can even return a string built using a template literal
+  return `${str0}${personExp}${str1}${ageStr}${str2}`;
+}
+
+const output = myTag`That ${person} is a ${age}.`; 
+// In above template literal : 'That', 'is', 'a' are the elements of string array passed to tag function
+// In above template literal : ${person} and ${age} are the other 2 arguments i.e. personExp & ageExp respectively
+
+console.log(output);
+// That Mike is a youngster.
