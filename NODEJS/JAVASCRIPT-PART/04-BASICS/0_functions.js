@@ -31,6 +31,7 @@ function function_3 (p1, p2, p3){
 
 let call_1 = function_3(1,2) // less parameters //returned value stored in call_1
 console.log("call_1 = ",call_1,"\n");//if string literal was used here then it would have printed just blank space instead of undefined
+console.log(`call_1 = ${call_1} \n`);
 let call_2 = function_3(1,2,3)  // exact parameters //returned value stored in call_1
 console.log("call_2 = ",call_2,"\n");
 let call_3 = function_3(1,2,3,4) // more parameters // no errors , for extra arguments / parameters //returned value stored in call_1
