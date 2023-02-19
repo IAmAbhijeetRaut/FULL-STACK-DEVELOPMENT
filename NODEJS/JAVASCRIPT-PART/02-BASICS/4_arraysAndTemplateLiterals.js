@@ -60,6 +60,9 @@ for (const value of arr) {
 arr.forEach(function(element) {
   console.log(element);
 });
+arr.forEach(function(element,index) {
+  console.log(`element is : ${element} & index is ${index}`);
+});
 
 
 //Sparse Arrays
