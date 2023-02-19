@@ -1,4 +1,35 @@
-// Arithmetic operators
+// Arithmetic operators | Remainder Operator | Assignment Operator
+
+//Assignment Operator
+// The following code initializes a variable named counter to zero
+let counter = 0;
+// The following code increases the value of the counter variable by one
+counter = counter + 1;
+// The following code uses the shorthand version of the previous line of code
+counter += 1;
+// The following table shows shorthand versions of other arithmetic operators combined with the assignment operator
+/*
+Operator Meaning Description
+a = b a = b Assigns the value of b to a
+a += b a = a + b Adds the value of b to a
+a -= b a = a - b Subtracts the value of b from a
+a *= b a = a * b Multiplies the value of a by b
+a /= b a = a / b Divides the value of a by b
+a %= b a = a % b Assigns the remainder of a divided by b to a
+a &= b a = a & b Assigns the bitwise AND of a and b to a
+a |= b a = a | b Assigns the bitwise OR of a and b to a
+a ^= b a = a ^ b Assigns the bitwise XOR of a and b to a
+a <<= b a = a << b Assigns the value of a left-shifted by b to a
+a >>= b a = a >> b Assigns the value of a right-shifted by b to a (preserves sign)
+a >>>= b a = a >>> b Assigns the value of a right-shifted by b to a (does not preserve sign)
+*/
+// The following code demonstrates assigning a single value to multiple variables using chained assignment operators
+let a = 10, b = 20, c = 30;
+a = b = c; // all variables are 30
+// In the previous line of code, JavaScript first assigns the value of c to b, then assigns the value of b to a, so all three variables end up with the value 30.
+
+
+
 
 //Addition Operator 
 // adds numbers annd concatenates strings
@@ -81,6 +112,79 @@ let energy = {
   currentEnergy = energy * 1.5;
   console.log("currentEnergy = energy * 1.5 then currentEnergy = ",currentEnergy);
   
+
+
+//Remainder Operator
+
+let dividend = 5;
+let divisor = 2;
+let remainder = dividend % divisor;
+console.log(remainder); // 1
+
+// The remainder operator returns the remainder left over when one value is divided by another value.
+// The syntax of the remainder operator is dividend % divisor, and the equation for the remainder is dividend = divisor * quotient + remainder, where |remainder| < |divisor|.
+// In this equation, the dividend, divisor, quotient, and remainder are all integers. The sign of the remainder is the same as the sign of the dividend.
+
+// Here are some examples of using the remainder operator:
+// 1) Using the remainder operator with positive dividend example
+remainder = 5 % -2;
+console.log(remainder); // 1
+
+remainder = 5 % 2;
+console.log(remainder); // 1
+
+// 2) Using the remainder operator with negative dividend example
+remainder = -5 % 3;
+console.log(remainder); // -2
+
+remainder = -5 % -3;
+console.log(remainder); // -2
+
+// 3) Using the remainder operator special values
+remainder = Infinity % 2;
+console.log(remainder); // NaN
+
+remainder = 10 % 0;
+console.log(remainder); // NaN
+
+remainder = Infinity % Infinity;
+console.log(remainder); // NaN
+
+remainder = 10 % Infinity;
+console.log(remainder); // 10
+
+remainder = 0 % 10;
+console.log(remainder); // 0
+
+remainder = '10' % 3;
+console.log(remainder); // 1
+
+// You can also use the remainder operator to check if a number is odd:
+let num = 13;
+let isOdd = num % 2;
+
+// To define a function that returns true if a number is odd or false otherwise:
+function isOdd(num) {
+return num % 2;
+}
+
+// Or using an arrow function in ES6:
+const isOdd = (num) => num % 2;
+
+// In JavaScript, the remainder operator (%) is not the modulo operator. To get a modulo in JavaScript, you can use the following expression:
+const mod = (dividend, divisor) => ((dividend % divisor) + divisor) % divisor;
+
+// If the division and divisor have the same sign, the remainder and modulo operators return the same result. Otherwise, they return different results.
+// For example:
+console.log('remainder:', 5 % 3); // 2
+console.log('modulo:', mod(5, 3)); // 2
+
+console.log('remainder:', -5 % 3); // -2
+console.log('modulo:', mod(-5, 3)); // 1
+
+// Use the JavaScript remainder operator (%) get the the remainder of a value divided by another value.
+
+
 
 
 
