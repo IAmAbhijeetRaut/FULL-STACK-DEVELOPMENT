@@ -1,4 +1,4 @@
-//FUNCTIONS
+// FUNCTIONS - OVERALL VIEW
 
 // BASIC FUNCTIONS ------------------------------------------------------------------
 
@@ -51,6 +51,7 @@ function function1() {
   }
 
 //4. Function Alias
+//We can assign a regular function to a variable like this
 const myFunction1 = function1;
 console.log(`function1 = ${function1} type = ${typeof function1}`)
 console.log(`myFunction = ${myFunction1} type = ${typeof myFunction1}`)
@@ -74,6 +75,7 @@ myFunction1();
 
 
 //5.anonymous/unnamed function
+//We can assign a regular function to a variable like this in that way we can remove the name of the function
 const myFunction2 = function () {
     console.log("inside anonymous myFunction2");
   };
@@ -82,3 +84,27 @@ myFunction2();
 
 
 //6. Arrow Function / Fat Arrow Function / lambda function
+//ES6 arrow functions provide you with an alternative way to write a shorter syntax compared to the function expression.
+//Arrow functions are anonymous by default , we need to assign them to a variable to use them 
+//or they also can be used with certain fucntions that accept the arrow functions as an argument
+// otherwise we can't use them plainly anywhere
+/* Syntax Of Arrow Function Below :  
+
+(param1, param2) => {
+  <Function Body>
+}
+
+ but they cant be used just like mentioned above in type-1, i mean how will you provide the caller to such function ? \
+ so see below is the actual ways that you can use to invoke / call an arrow function
+*/
+
+// The anonymous fucntion mentioned in above 5th point of anonymous function can 
+//now be converted to arrow function as shown below
+const arrowFunctionName = () => {
+  console.log("Arrow Function ");
+}
+
+//call to above arrow function
+// arrowFunctionName; // invalid
+arrowFunctionName(); // correct function call
+

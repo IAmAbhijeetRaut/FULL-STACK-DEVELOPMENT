@@ -1,3 +1,5 @@
+// Functions - Default Parameters 
+
 let sayHello  = function (){
     console.log("Hello");
     console.log('Welcome');

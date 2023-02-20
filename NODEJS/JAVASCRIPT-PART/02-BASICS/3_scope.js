@@ -33,7 +33,7 @@ if (true) {
         console.log("Whos is the King ? --> ",King); // this is gonna look into its scope first
         // if any value found in its own scope then it will print it
         // so in this case if we comment King = Ram then it will consider Sam as the king
-        // if Sam part is also commented then 
+        // if Sam part is also commented then it considers John as the king 
     }
 }
 
