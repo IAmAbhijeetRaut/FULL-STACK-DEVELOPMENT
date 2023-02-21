@@ -64,3 +64,24 @@ result = (-2)**3;
 console.log(result); // -8
 
 // Note that JavaScript does not allow you to put a unary operator immediately before the base number.
+
+// In this tutorial, we learned how to use the JavaScript ternary operator to make our code more concise.
+
+// Example 1: Using the ternary operator in place of an if...else statement
+let age_1 = 18;
+let message_1;
+
+age_1 >= 16 ? (message_1 = 'You can drive.') : (message_1 = 'You cannot drive.');
+
+console.log(message_1);
+
+// Example 2: Using the ternary operator in an expression
+let age_2 = 18;
+let message_2;
+
+message_2 = age >= 16 ? 'You can drive.' : 'You cannot drive.';
+
+console.log(message_2);
+
+// Syntax of the ternary operator:
+// condition ? expressionIfTrue : expressionIfFalse;
