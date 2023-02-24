@@ -71,8 +71,9 @@ console.log('using original function');
 function1();
 console.log('using alias');
 myFunction1();
-//myFunction1; // this will not invoke the call to the function
 //same output in both the cases
+//myFunction1; // this will not invoke the call to the function
+
 
 
 //5.anonymous/unnamed function

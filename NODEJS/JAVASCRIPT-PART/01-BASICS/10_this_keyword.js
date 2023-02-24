@@ -63,10 +63,19 @@ let counter = {
   
   Car.prototype.getBrand = function () {
     return this.brand;
-  };
+  }; // The prototype property references the actual function object an dcan be used to extned an objects properties
   
   let car1 = new Car("Honda");
   console.log(car1.getBrand()); // Log_8: Honda
+  //what is happening here
+  /* 
+  The Car function's prototype is then extended with a method getBrand()
+  which returns the brand property of the instance of the Car object.
+  After defining the constructor function and adding the getBrand() method to its prototype, 
+  a new instance of the Car object is created using 
+  the new keyword, with 'Honda' as the argument for brand. This instance is assigned to the 
+  variable car.
+  */
   
   // Example 9: This in indirect invocation
   // Explanation: Use the call() and apply() methods to set the this keyword.
