@@ -21,6 +21,7 @@ console.log(person['firstName']); //Log_3
 console.log(person['lastName']); //Log_4
 
 //Accessing a property that contains spaces
+//You need to use '' to use a multiword key in object e.g as in here we used 'building no'
 let address = {
 'building no': 3960,
 street: 'North 1st street',
@@ -50,6 +51,20 @@ employeeId: 1
 console.log('ssn' in employee); //Log_7
 console.log('employeeId' in employee); //Log_8
 
+// using variables for property names
+let fruit = "Which fruit to buy? , is that apple";
+
+let bag = {
+[fruit]: 5, // the name of the property is taken from the variable fruit
+};
+console.log(bag[fruit]); // Log_9: 5
+
+// computed properties with square brackets
+let propertyName = "likes birds";
+let student = {};
+student[propertyName] = true;
+console.log(student[propertyName]); // Log_10: true
+
 /* Output:
 John
 Doe
@@ -58,5 +73,7 @@ Doe
 3960
 { firstName: 'Jane', lastName: 'Doe' }
 false
+true
+5
 true
 */
