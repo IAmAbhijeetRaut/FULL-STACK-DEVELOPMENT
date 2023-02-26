@@ -46,7 +46,7 @@ if (true) {
 /* var --> 
 1. The var variables belong to the global scope when you define them outside a function.
    when we say outside the function then it means whether we define them outside all the blocks
-   or inside a if block{} or for loop then also it remains in a global scope.
+   or inside a if-expression enclosed in paranthesis() or for loop then also it remains in a global scope.
 2. The var keyword allows you to redeclare a variable without any issue.
 3. In the creation phase, the JavaScript engine assigns storage spaces to var variables 
    and immediately initializes them to undefined.
@@ -55,6 +55,7 @@ if (true) {
 */ 
 
 /* let --> 
+
 1. In the creation phase, the JavaScript engine assigns storage spaces to the let variables but does 
    not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.
 2. The let variables have the same execution phase as the var variables.
