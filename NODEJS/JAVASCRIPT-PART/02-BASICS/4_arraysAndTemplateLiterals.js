@@ -126,6 +126,29 @@ console.log(`variable_2 = ${variable_2}`); // Template literal -> `variable_2 = 
 console.log(`variable_1 = ${variable_1}
              variable_2 = ${variable_2}`); //new line and spaces will be considered
 
+
+let Obj_1 = {
+  name : "David",
+  age :24,
+  height : '5.5ft'
+}
+console.log("Printing Obj_1 using double quotes : ", Obj_1); // {"name":"David","age":24,"height":"5.5ft"}
+console.log(`Printing Obj_1 : ${Obj_1}`); // [object Object] // why its printing like this
+/* 
+Above When you try to print an object directly using string interpolation with ${}, JavaScript will use 
+the default toString() method of the object, which usually returns the string "[object Object]".
+That's why you are seeing [object Object] in the output instead of the contents of the object.
+To print the contents of the myTodos object, you need to convert it to a string in a format that
+you want. One way to do this is to use the JSON.stringify() method to convert the object to a 
+JSON string representation.
+*/
+console.log(`Printing Obj_1 : ${JSON.stringify(Obj_1)}`);
+//other way to print the content of an object when using string literals is using for in loop
+for(let key in Obj_1){
+  console.log(`${key} : ${Obj_1[key]}`);
+}
+
+
 //Tagged Templates : 
 // Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values.
 // The remaining arguments are related to the expressions.
