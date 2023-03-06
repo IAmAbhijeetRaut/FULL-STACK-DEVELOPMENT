@@ -1,0 +1,24 @@
+/* padding single sides */
+
+p{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right:90px;
+}
+
+/* The CSS width property specifies the width of the element's content area. 
+The content area is the portion inside the padding, border, and margin of an element (the box model). */
+/* To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. 
+This causes the element to maintain its actual width; if you increase the padding, the available 
+content space will decrease. */
+
+img{
+
+    /* padding-top: 110px; */
+    /* padding-bottom: 110px; */
+    padding-left: 700px;
+    /* padding-right:70px; */
+    box-sizing: border-box;
+
+}
