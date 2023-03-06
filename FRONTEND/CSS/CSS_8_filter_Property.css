@@ -5,7 +5,7 @@ img{
     /* filter: brightness(50%); */
 }
 body{
-    background-image: url(IMAGES/Programming\ HubGIF.gif);
-    filter: blur(500px);
-    background-repeat: no-repeat;
+background: -webkit-linear-gradient(90deg, rgb(41, 124, 198), rgb(188, 199, 211));
+background: linear-gradient(90deg, rgb(41, 124, 198), rgb(188, 199, 211));
+
 }
