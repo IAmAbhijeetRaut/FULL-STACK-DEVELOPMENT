@@ -1,0 +1,11 @@
+
+img{
+    filter:grayscale(80%);
+    filter: blur(250px);
+    /* filter: brightness(50%); */
+}
+body{
+    background-image: url(IMAGES/Programming\ HubGIF.gif);
+    filter: blur(500px);
+    background-repeat: no-repeat;
+}
