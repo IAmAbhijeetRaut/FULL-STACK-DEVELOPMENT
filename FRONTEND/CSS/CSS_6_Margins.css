@@ -1,0 +1,22 @@
+
+
+p{
+    /* margin-top:100px; */
+    /* margin-left:100px; */
+    /* margin-right:100px; */
+    /* margin-bottom:100px; */
+    margin:auto;
+}
+
+
+/*margin shorthand */
+p{
+    margin:20px 100px 50px  92px;
+    /*      Top Left  Right Bottom */
+}
+
+h1{
+    margin: 120px 0 0 0;
+}
+
+/* Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins. */

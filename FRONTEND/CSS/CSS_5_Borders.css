@@ -1,0 +1,69 @@
+/*  border-style */
+p{
+   border-style: double;
+   /* border-style: dashed; */
+   /* border-style: dotted; */
+   /* border-style: solid; */
+   /* border-style: groove; */
+   /* border-style: ridge; */
+   /* border-style: inset; */
+   /* border-style: outset; */
+   /* border-style: none; */
+   /* border-style: hidden; */
+   /* border-style: dotted dashed solid double; */
+}
+
+/* border-color */
+p{
+    border-color: aqua;
+    border-color:red rgb(0, 0, 0) blue rgb(0, 255, 255); 
+    /*The border-color property can have from one to four values (for the top border, right border, bottom border, and the left border).*/
+    /* border-color: #ff0000; */ 
+    /* color specified using hex values */
+    /* border-color: rgb(255, 0, 0);  */
+    /* color specified using rgb values */
+    /* border-color:hsla(199, 100%, 50%, 0.841); */
+    /* color specified using hsl values */
+}
+
+/* border-width */
+p{
+    border-width:20px;
+    border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+
+/* border-sides */
+p{
+    border-top-style: ridge; /*top*/
+    border-right-style: groove; /*right*/
+    border-bottom-style: dotted; /*bottom*/
+    border-left-style: solid; /*left*/
+
+    /* border-style: dotted solid double; */
+    /* if 3 values -> top border is dotted, right and left borders are solid, bottom border is double */
+
+    /* border-style: dotted solid; */
+    /*if 2 values -> top and bottom borders are dotted , right and left borders are solid */
+
+    /* border-style: dotted; */
+    /* all four borders are dotted */
+}
+
+/* border shorthand */
+p{
+   border: 5px 10px 10px 5px solid ridge groove dotted red;
+}
+
+/* rounded borders */
+p{
+  /* border: 12px solid red; */
+  /* border-radius: 5px; */
+}
+
+/* More Border Properties */
+p{
+    /* border-right-width: thin; */
+    /* border-top-style: dotted; */
+    /* border-top-left-radius: 15px; */
+    /* border-right-color: coral; */
+}
