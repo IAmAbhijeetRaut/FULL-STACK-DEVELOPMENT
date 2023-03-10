@@ -134,6 +134,7 @@ Array.prototype.every()
 Array.prototype.filter()
 Array.prototype.find()
 Array.prototype.findIndex()
+Array.prototype.findLast()
 Array.prototype.forEach()
 Array.prototype.map()
 Array.prototype.reduce()
@@ -151,3 +152,39 @@ These methods have the following characteristics :
     c) If an existing, yet-unvisited element of the array is changed by callbackFn, its value passed 
        to the callbackFn will be the value at the time that element gets visited. 
     d) Deleted elements are not visited.
+
+
+You can see in the MDN DOCS The above methods i.e. from every() till some() all these methods have that same syntax
+as follows : 
+
+// Arrow function
+methodName___((element) => { /* … */ })
+methodName___((element, index) => { /* … */ })
+methodName___((element, index, array) => { /* … */ })
+
+// Callback function
+methodName___(callbackFn)
+methodName___(callbackFn, thisArg)
+
+// Inline callback function
+methodName___(function (element) { /* … */ })
+methodName___(function (element, index) { /* … */ })
+methodName___(function (element, index, array) { /* … */ })
+methodName___(function (element, index, array) { /* … */ }, thisArg)
+
+callbackFn
+A function to execute for each element in the array. It should return a truthy value to indicate a matching element has been found.
+
+The function is called with the following arguments:
+
+element
+The current element being processed in the array.
+
+index
+The index of the current element being processed in the array.
+
+array
+The array find() was called upon.
+
+thisArg Optional
+A value to use as this when executing callbackFn. See iterative methods.
