@@ -1,4 +1,4 @@
-const myTodos = [
+  const myTodos = [
     'Learn React', 'Learn Dancing', 'Learn DSA'
 ]
 

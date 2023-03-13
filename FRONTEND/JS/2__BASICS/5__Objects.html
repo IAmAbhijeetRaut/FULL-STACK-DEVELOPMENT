@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        student_1 = {
+    id:101,
+    sname:"John Doe",
+    age:19
+}
+
+console.log(`Student_1 id is ${student_1.id}, name is ${student_1.sname} and age is ${student_1.age}`);
+
+let student_2 = {
+    id:101,
+    sname:"John Doe",
+    age:19
+}
+console.log(`Student_2 id is ${student_2.id}, name is ${student_2.sname} and age is ${student_2.age}`);
+console.log("student_1: " + JSON.stringify(window.student_1));
+console.log("student_2: " + JSON.stringify(window.student_2));
+    </script>
+</body>
+</html>
